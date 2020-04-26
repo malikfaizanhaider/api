@@ -1,0 +1,4 @@
+{
+  "baseUrl": "https://newsapi.org/v2/top-headlines?country=us&apiKey=f66290de34bb4d57b22fb2c72f78bd13",
+  "textfile": "assets/textfile.txt"
+}

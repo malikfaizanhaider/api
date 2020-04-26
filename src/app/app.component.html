@@ -1,0 +1,34 @@
+<!--<app-config *ngIf="showConfig"></app-config>-->
+
+
+<div class="container">
+  <h1>Password Generator</h1>
+  <div class="form-group">
+    <label for="password">Enter Length</label>
+    <input (input)="onChangeLength($event.target.value)" id="password" type="text" class="form-control"/>
+  </div>
+
+  <div class="form-group">
+    <label for="useLetters">Use Letters</label>
+    <input (change)="onChangeUserLetters()" id="useLetters" type="checkbox"/>
+  </div>
+
+  <div class="form-group">
+    <label for="useNumbers">Use Numbers</label>
+    <input (change)="onChangeUseNumbers()" id="useNumbers" type="checkbox"/>
+  </div>
+
+  <div class="form-group">
+    <label for="useSymbols">Use Symbols</label>
+    <input (change)="onChangeUseSymbols()" id="useSymbols" type="checkbox"/>
+  </div>
+
+  <div class="form-group">
+    <button [disabled]="!(length && (includeSymbols || includeLetters || includeNUmbers))" class="btn btn-primary" (click)="onBUttonCLick()" type="submit">Generate</button>
+  </div>
+
+  <div class="form-group" *ngIf="password">
+    <label for="generatedCode">Generated Code</label>
+    <input [value]="password" id="generatedCode" type="text"/>
+  </div>
+</div>
